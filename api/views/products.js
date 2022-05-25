@@ -20,7 +20,7 @@ exports.products_get_all = (req, res, next) => {
             //   url: "http://localhost:3000/products/" + doc._id
             // }
           };
-        })
+})
       };
       //   if (docs.length >= 0) {
       res.status(200).json(response);
