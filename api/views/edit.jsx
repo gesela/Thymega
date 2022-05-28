@@ -13,10 +13,12 @@ module.exports = class Edit extends React.Component {
                     <input type="text" id="name" name="name" defaultValue={product.name} />
                     <label htmlFor="price">price:</label>
                     <input type="text" id="price" name="price" defaultValue={product.price}/>
+                    <label htmlFor="image">Image</label>
+                    <input type="text" id="image" name="image" />
                     <label htmlFor="isAvailable">Is available:</label>
                     <input type="checkbox" id="isAvailable" name="isAvailable" defaultChecked={product.isAvailable}/>
                     <input type="submit" value="Edit Product"/>
-                </form>
+                </form><br />
                 <button><a href="/products">Back</a></button>
             </DefaultLayout>
         )
