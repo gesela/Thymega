@@ -8,7 +8,8 @@ class Show extends React.Component {
         return (
             <DefaultLayout title="Show">
                 <div>
-                    <p class="content">The {product.name}'s price is {product.price}.</p>
+                    <p class="content">The {product.name}'s price is ${product.price}.</p>
+                    <img src={product.img} alt="" />
                     <p>
                         {
                             product.isAvailable

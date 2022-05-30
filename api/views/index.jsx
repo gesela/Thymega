@@ -6,23 +6,29 @@ class Index extends React.Component {
         // Object Destructuring
         const { products } = this.props
         return (
-            <DefaultLayout title="Index" name='THYMEGA'>
+            <DefaultLayout title="THYMEGA TOOLS SHOP" name='THYMEGA'>
                 <div>
-                    <nav>
-                        <a class='link' href="/products/new">Create a New Product</a>
-                    </nav>
-                    <ul>
+                    <div class="container sticky-top">
+                        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                            <a href="/products/new">Create a New Product</a>
+                        </nav>
+                    </div>
+                    <ul class="d-flex flex-column mb-3 flex-wrap" style={{height:"100vh"}}>
                         {
                             Products.map(product => {
                                 return (
-                                    <li key={product._id}>
-                                        <p>The <a href={`/products/${product._id}`}>{product.name}'s</a> Price is {product.price}.</p>
-                                        <p>{product.isAvailable ? 'AVAILABLE' : 'NOT AVAILABLE'}</p>
+                                    <li key={product._id} class="d-flex p-3 bg-info m-1 rounded-3 justify-content-around">
+                                        <div class="d-flex flex-column">
+                                            <p>Product: <a href={`/products/${product._id}`}>{product.name}</a> </p>
+                                            <p>Price is ${product.price}.</p>
+                                            <p>{product.isAvailable ? 'AVAILABLE' : 'NOT AVAILABLE'}</p>
+                                        </div>
+                                        <a href={`/products/${product._id}`}> <img src={product.img} alt="Tools" /></a>
                                         <form action={`/products/${products._id}?_method=DELETE`}  method="POST">
-                                            <input type="submit" value="DELETE" />
+                                            <button class="btn btn-primary"  type="submit" value="DELETE">DELETE</button> 
                                         </form>
                                  
-                                        <button><a href={`/products/${product._id}/edit`}>{`Edit ${product.name}`}</a></button>
+                                        <button class="btn btn-primary"><a href={`/products/${product._id}/edit`}>{`Edit ${product.name}`}</a></button>
                                     </li>
                                 )
                             })
