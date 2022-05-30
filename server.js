@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const method = require('method-override')
 const app = express()
 const PORT = 3000
-const Product = require('./models/Product')
+const Product = require('./models/product')
 
 // ===== Connection to Database =====
 mongoose.connect(process.env.MONGO_PW, {
@@ -99,5 +99,5 @@ app.get('/products/:id', (req, res) => {
     
 })
 
-//==Port===
+//Port
 app.listen(PORT, () => console.log(`Listening to port ${PORT}`))
