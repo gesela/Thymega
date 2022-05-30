@@ -15,8 +15,8 @@ module.exports = class New extends React.Component {
                     <input class="mb-2 form-control" type="text" id="price" name="price"/>
                     </div>
                     <div class="col-md-6">
-                    <label class="mb-2 form-label" htmlFor="img">Image URL:</label>
-                    <input class="mb-2 form-control" type="text" id="img" name="img" />
+                    <label class="mb-2 form-label" htmlFor="productImage">Image URL:</label>
+                    <input class="mb-2 form-control" type="file" id="productImage" name="productImage" />
                     </div>
                     <label class="mb-2 form-label" htmlFor="isAvailable">Is Available:</label>
                     <input class="mb-2 form-control" type="checkbox" id="isAvailable" name="isAvailable"/>
